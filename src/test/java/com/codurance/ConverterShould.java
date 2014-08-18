@@ -49,4 +49,9 @@ public class ConverterShould {
         converter.convert(940);
         assertThat(converter.convert(940), is("CMXL"));
     }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void should_throw_exception_if_null_value_converted() {
+        converter.convert(null);
+    }
 }
