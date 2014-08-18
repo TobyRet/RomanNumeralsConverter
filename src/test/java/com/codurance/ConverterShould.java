@@ -29,12 +29,24 @@ public class ConverterShould {
     public void should_list_conversionTable_in_reverse_order() {
         Object firstKey = Converter.table.keySet().toArray()[0];
         Object firstValue = Converter.table.get(firstKey);
-        assertThat(firstValue, is("L"));
+        assertThat(firstValue, is("M"));
     }
 
     @Test
     public void should_convert_22_to_XXII() {
         converter.convert(22);
         assertThat(converter.convert(22), is("XXII"));
+    }
+
+    @Test
+    public void should_convert_14_to_XIV() {
+        converter.convert(14);
+        assertThat(converter.convert(14), is("XIV"));
+    }
+
+    @Test
+    public void should_convert_940_to_CMXL() {
+        converter.convert(940);
+        assertThat(converter.convert(940), is("CMXL"));
     }
 }
