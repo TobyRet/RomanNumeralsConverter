@@ -50,8 +50,15 @@ public class ConverterShould {
         assertThat(converter.convert(940), is("CMXL"));
     }
 
+    @Test
+    public void should_convert_4999_to_MMMMCMXCIX() {
+        converter.convert(4999);
+        assertThat(converter.convert(4999), is("MMMMCMXCIX"));
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void should_throw_exception_if_null_value_converted() {
         converter.convert(null);
     }
+
 }
